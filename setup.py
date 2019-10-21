@@ -1,9 +1,9 @@
 from setuptools import setup
 
 setup(name='aih_generate',
-      version='0.1',
+      version='0.3',
       description='Generate graphql code',
-      url='',
+      url='https://github.com/quyencao/aih_generate',
       author='aih',
       author_email='flyingcircus@example.com',
       license='MIT',
@@ -13,6 +13,6 @@ setup(name='aih_generate',
           'six',
           'PyYAML'
       ],
-      scripts=['bin/aih_generate'],
+      scripts=['bin/aih'],
       include_package_data=True,
       zip_safe=False)

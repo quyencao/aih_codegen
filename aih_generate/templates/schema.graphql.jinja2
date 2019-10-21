@@ -3,7 +3,7 @@ type Mutation {
   {% for type in types %}
   create{{ type["name"] }}(input: {{ type["name"] }}Input!): {{ type["name"] }}
   update{{ type["name"] }}(id: ID!, input: {{ type["name"] }}Input!): {{ type["name"] }}
-  remove{{ type["name"] }}(id: ID!): Boolean
+  delete{{ type["name"] }}(id: ID!): Boolean
   {% endfor %}
 }
 
