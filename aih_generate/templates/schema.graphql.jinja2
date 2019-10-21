@@ -1,8 +1,8 @@
 
 type Mutation {
   {% for type in types %}
-  create{{ type["name"] }}(input: {{ type["name"] }}Input!): {{ type["name"] }}
-  update{{ type["name"] }}(id: ID!, input: {{ type["name"] }}Input!): {{ type["name"] }}
+  create{{ type["name"] }}(input: Create{{ type["name"] }}Input!): {{ type["name"] }}
+  update{{ type["name"] }}(id: ID!, input: Update{{ type["name"] }}Input!): {{ type["name"] }}
   delete{{ type["name"] }}(id: ID!): Boolean
   {% endfor %}
 }
@@ -15,9 +15,15 @@ type Query {
 }
 
 {% for type in types %}
-input {{ type["name"] }}Input {
+input Create{{ type["name"] }}Input {
   {% for field in type["fields"] %}
   {{ field["name"] }}: {{ field["type"] }}{{ '!' if field["required"] else '' }}
+  {% endfor %}
+}
+
+input Update{{ type["name"] }}Input {
+  {% for field in type["fields"] %}
+  {{ field["name"] }}: {{ field["type"] }}
   {% endfor %}
 }
 
