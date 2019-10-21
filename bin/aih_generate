@@ -1,0 +1,5 @@
+#!/usr/bin/env python
+
+import aih_generate
+
+aih_generate.GraphqlGenerate()
