@@ -47,7 +47,7 @@ Generate schema and resolver
 
 ```
 USAGE
-  $ aih codegen:resolver
+  $ aih codegen:app
 
 OPTIONS
   -c, --config=config                    Path to your config file
