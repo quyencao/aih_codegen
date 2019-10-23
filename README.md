@@ -4,13 +4,11 @@ Generate graphql schema and resolver code
 
 # Usage
 ```sh-session
-$ npm install -g aih-codegen
+$ pip3 install --user aih-codegen
 $ aih COMMAND
 running command...
-$ aih (-V|--version)
-0.0.1
 $ aih --help
-  Usage: aih [options] [command]
+  Usage: aih [command] [options]
   Generate graphql code
 ...
 ```

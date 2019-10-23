@@ -1,11 +1,11 @@
 from setuptools import setup
 
 setup(name='aih_codegen',
-      version='0.7',
+      version='0.12',
       description='Generate graphql code',
-      url='https://github.com/quyencao/aih_generate',
+      url='https://github.com/quyencao/aih_codegen',
       author='aih',
-      author_email='flyingcircus@example.com',
+      author_email='quyen.cm@example.com',
       license='MIT',
       packages=['aih_codegen'],
       install_requires=[
@@ -14,5 +14,6 @@ setup(name='aih_codegen',
           'PyYAML'
       ],
       scripts=['bin/aih'],
+      zip_safe=False,
       include_package_data=True,
-      zip_safe=False)
+      python_requires='>=3.6')

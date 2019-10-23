@@ -2,7 +2,8 @@ import os
 import sys
 import yaml
 import argparse
-from jinja2 import FileSystemLoader, Environment
+from .template import template
+from jinja2 import Template
 from six import text_type as _text_type
 
 class GraphqlGenerate:
@@ -59,13 +60,8 @@ commands:
 
         with open(args.config, "r") as c:
             doc = yaml.load(c.read(), Loader=yaml.FullLoader)
-
-        base_dir = os.getcwd()
-        template_dir = os.path.join(base_dir, "templates")
-        templateLoader = FileSystemLoader(searchpath=template_dir)
-        templateEnv = Environment(loader=templateLoader, trim_blocks=True, lstrip_blocks=True)
         
-        schema_template = templateEnv.get_template("schema.graphql.jinja2")
+        schema_template = Template(template["schema"])
 
         schema_output = schema_template.render({ "types": doc["types"] })
 
@@ -95,13 +91,8 @@ commands:
 
         with open(args.config, "r") as c:
             doc = yaml.load(c.read(), Loader=yaml.FullLoader)
-
-        base_dir = os.getcwd()
-        template_dir = os.path.join(base_dir, "templates")
-        templateLoader = FileSystemLoader(searchpath=template_dir)
-        templateEnv = Environment(loader=templateLoader, trim_blocks=True, lstrip_blocks=True)
         
-        resolver_template = templateEnv.get_template("resolvers.js.jinja2")
+        resolver_template = Template(template["resolver"])
 
         resolver_output = resolver_template.render({ "types": doc["types"] })
 
@@ -139,13 +130,8 @@ commands:
         with open(args.config, "r") as c:
             doc = yaml.load(c.read(), Loader=yaml.FullLoader)
 
-        base_dir = os.getcwd()
-        template_dir = os.path.join(base_dir, "templates")
-        templateLoader = FileSystemLoader(searchpath=template_dir)
-        templateEnv = Environment(loader=templateLoader, trim_blocks=True, lstrip_blocks=True)
-        
-        schema_template = templateEnv.get_template("schema.graphql.jinja2")
-        resolver_template = templateEnv.get_template("resolvers.js.jinja2")
+        schema_template = Template(template["schema"])
+        resolver_template = Template(template["resolver"])
 
         schema_output = schema_template.render({ "types": doc["types"] })
         resolver_output = resolver_template.render({ "types": doc["types"] })
