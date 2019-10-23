@@ -33,7 +33,7 @@ OPTIONS
 ```
 
 ## `aih codegen:resolver`
-Generate schema
+Generate resolver
 
 ```
 USAGE
