@@ -8,11 +8,14 @@ from six import text_type as _text_type
 class GraphqlGenerate:
     def __init__(self):
         parser = argparse.ArgumentParser(
-            usage=''' aih <command> [<args>]
-The most commonly used aih commands are:
-codegen:schema|s     Generate schema
-codegen:resolver|r   Generate resolver
-codegen:app|a        Generate schema and resolver
+            usage='''aih [command] [options]
+
+generate graphql code
+
+commands:
+   codegen:schema|s [options]     Generate schema
+   codegen:resolver|r [options]   Generate resolver
+   codegen:app|a [options]        Generate schema and resolver
             '''
         )
         parser.add_argument('command', help='Subcommand to run')
