@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='aih_codegen',
-      version='0.4',
+      version='0.5',
       description='Generate graphql code',
       url='https://github.com/quyencao/aih_generate',
       author='aih',
