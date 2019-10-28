@@ -1,6 +1,6 @@
 # Aih Codegen
 
-Generate graphql schema and resolver code
+Generate graphql schema and resolvers code
 
 # Usage
 ```sh-session
