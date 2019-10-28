@@ -53,7 +53,7 @@ commands:
             "--output", "-o",
             type=_text_type,
             help="Output file",
-            default="schema.graphql"
+            default="schema.js"
         )
 
         args = parser.parse_args(sys.argv[2:])
@@ -115,7 +115,7 @@ commands:
             "--soutput", "-s",
             type=_text_type,
             help="Path to scheme output file",
-            default="schema.graphql"
+            default="schema.js"
         )
 
         parser.add_argument(

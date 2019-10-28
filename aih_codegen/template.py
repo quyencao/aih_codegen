@@ -1,6 +1,9 @@
 
 template = {
     'schema': '''
+const { gql } = require("apollo-server-lambda");
+
+const typeDefs = gql`
 type Mutation {
   {% for type in types %}
   create{{ type["name"] }}(input: Create{{ type["name"] }}Input!): {{ type["name"] }}
@@ -40,6 +43,9 @@ type {{ type["name"] }} {
 }
 
 {% endfor %}
+`;
+
+module.exports = typeDefs;
     ''',
     'resolver': '''
 const db = require('./db');
